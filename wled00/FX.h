@@ -29,7 +29,9 @@
 #ifndef WS2812FX_h
 #define WS2812FX_h
 
-#ifdef ESP32_MULTISTRIP
+#if defined(ESP32_MULTISTRIP_MATRIX)
+  #include "../usermods/esp32_multistrip_matrix/NpbWrapper.h"
+#elif defined(ESP32_MULTISTRIP)
   #include "../usermods/esp32_multistrip/NpbWrapper.h"
 #else
   #include "NpbWrapper.h"
